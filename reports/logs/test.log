@@ -1,0 +1,16 @@
+07:45:31 [INFO] Prüfe ob Seitentitel nicht leer ist
+07:45:31 [INFO] Titel gefunden: ProtoCommerce
+07:45:31 [INFO] Prüfe ob korrekte URL geladen wurde
+07:45:31 [INFO] URL gefunden: https://rahulshettyacademy.com/angularpractice/
+07:45:35 [INFO] Fülle Email Feld aus: hello@gmail.com
+07:45:35 [INFO] Email Feld Wert: hello@gmail.com
+07:45:36 [INFO] Fülle Passwort Feld aus
+07:45:36 [INFO] Passwort Feld Wert: 123456
+07:45:37 [INFO] Hake Checkbox an
+07:45:37 [INFO] Checkbox Status: True
+07:45:37 [INFO] Starte kompletten Formular Test
+07:45:37 [INFO] Email: hello@gmail.com
+07:45:38 [INFO] Passwort wird gesetzt
+07:45:38 [INFO] Wähle Dropdown Index 0
+07:45:39 [INFO] Klicke Checkbox an
+07:45:39 [INFO] Checkbox Status: True

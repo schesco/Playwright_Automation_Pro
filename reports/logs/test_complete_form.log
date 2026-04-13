@@ -1,0 +1,12 @@
+2026-04-12 07:33:01,495 [INFO] Tests.test_practice_form – Starte kompletten Formular Test
+2026-04-12 07:33:01,496 [INFO] Tests.test_practice_form – Email: hello@gmail.com
+2026-04-12 07:33:02,034 [INFO] Tests.test_practice_form – Passwort wird gesetzt
+2026-04-12 07:33:02,557 [INFO] Tests.test_practice_form – Wähle Dropdown Index 0
+2026-04-12 07:33:03,083 [INFO] Tests.test_practice_form – Klicke Checkbox an
+2026-04-12 07:33:03,617 [INFO] Tests.test_practice_form – Checkbox Status: True
+2026-04-12 07:45:37,614 [INFO] Tests.test_practice_form – Starte kompletten Formular Test
+2026-04-12 07:45:37,616 [INFO] Tests.test_practice_form – Email: hello@gmail.com
+2026-04-12 07:45:38,151 [INFO] Tests.test_practice_form – Passwort wird gesetzt
+2026-04-12 07:45:38,682 [INFO] Tests.test_practice_form – Wähle Dropdown Index 0
+2026-04-12 07:45:39,204 [INFO] Tests.test_practice_form – Klicke Checkbox an
+2026-04-12 07:45:39,742 [INFO] Tests.test_practice_form – Checkbox Status: True

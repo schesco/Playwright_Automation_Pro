@@ -1,0 +1,46 @@
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+*.egg-info/
+dist/
+build/
+Uebungen/
+# ── Virtual Environment ───────────────────────────────────────────────────────
+venv/
+.venv/
+env/
+.env/
+
+# ── pytest ────────────────────────────────────────────────────────────────────
+.pytest_cache/
+pytestdebug.log
+
+# ── Allure ────────────────────────────────────────────────────────────────────
+Tests/reports/
+# ── Playwright ────────────────────────────────────────────────────────────────
+playwright/.local-browsers/
+
+# ── IDE ───────────────────────────────────────────────────────────────────────
+.idea/              # PyCharm
+.vscode/            # VS Code
+*.iml
+
+# ── Betriebssystem ────────────────────────────────────────────────────────────
+.DS_Store           # Mac
+Thumbs.db           # Windows
+desktop.ini         # Windows
+
+# ── Umgebungsvariablen ────────────────────────────────────────────────────────
+.env
+.env.local
+
+pytest_cache/
+videos/
+screenshots/
+allure-results/
+allure-report/
+.idea/
+.vscode/
+trace.zip

@@ -1,0 +1,113 @@
+name: Playwright Tests
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+
+# ── JOB 1: BUILD ─────────────────────────────────────────────────────────────
+  build:
+    name: Build - Dependencies installieren
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Code auschecken
+        uses: actions/checkout@v3
+
+      - name: Python setup
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: pip Cache nutzen
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: pip-${{ hashFiles('requirements.txt') }}
+
+      - name: Python Pakete installieren
+        run: pip install -r requirements.txt
+
+      - name: Playwright Browser installieren
+        run: |
+          playwright install chromium
+          playwright install-deps chromium
+
+      - name: Allure installieren
+        run: |
+          curl -o allure.tgz -L https://github.com/allure-framework/allure2/releases/download/2.27.0/allure-2.27.0.tgz
+          tar -zxvf allure.tgz
+          sudo mv allure-2.27.0 /opt/allure
+          sudo ln -s /opt/allure/bin/allure /usr/bin/allure
+
+
+# ── JOB 2: TEST ──────────────────────────────────────────────────────────────
+  test:
+    name: Test - Playwright Tests ausführen
+    runs-on: ubuntu-22.04
+    needs: build
+
+    steps:
+      - name: Code auschecken
+        uses: actions/checkout@v4
+
+      - name: Python setup
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: pip Cache laden
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: pip-${{ hashFiles('requirements.txt') }}
+
+      - name: Python Pakete installieren
+        run: pip install -r requirements.txt
+
+      - name: Playwright Browser installieren
+        run: |
+          playwright install chromium
+          playwright install-deps chromium
+
+      - name: Allure installieren
+        run: |
+          curl -o allure.tgz -L https://github.com/allure-framework/allure2/releases/download/2.27.0/allure-2.27.0.tgz
+          tar -zxvf allure.tgz
+          sudo mv allure-2.27.0 /opt/allure
+          sudo ln -s /opt/allure/bin/allure /usr/bin/allure
+
+      - name: Ordner anlegen
+        run: mkdir -p reports/videos reports/logs reports/allure-results
+
+      - name: Tests ausführen
+        run: pytest
+
+      - name: Allure Report generieren
+        if: always()
+        run: allure generate reports/allure-results -o reports/allure-report --clean
+
+      - name: Allure Report hochladen
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-report
+          path: reports/allure-report/
+
+      - name: Videos hochladen bei Fehler
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: videos
+          path: reports/videos/
+
+      - name: Logs hochladen
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: logs
+          path: reports/logs/
