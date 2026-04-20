@@ -22,14 +22,15 @@ Das Ziel ist ein skalierbares Framework, das in realen QA‑Teams eingesetzt wer
 
 ## 📂 Projektstruktur
 Playwright_Automation_Pro/
+Playwright_Automation_Pro/
 │
-├── Pages/                 # Page Object Dateien
-├── Tests/                 # Testfälle (UI, Smoke, Regression)
-├── Utilities/             # Helper, Logger, Config-Tools
-├── reports/               # Testreports (HTML, Logs)
-├── logs/                  # Laufzeit-Logs
+├── 1-Pages/                 # Page Object Dateien
+├── 2-Tests/                 # Testfälle (UI, Smoke, Regression)
+├── 3-Utilities/             # Helper, Logger, Config-Tools
+├── 4-reports/               # Testreports (HTML, Logs)
+├── 5-logs/                  # Laufzeit-Logs
 │
-├── conftest.py            # Browser- und Kontext-FIxtures
-├── pytest.ini             # Pytest-Konfiguration
-├── requirements.txt       # Python-Abhängigkeiten
-└── .github/workflows/     # CI/CD Workflows (GitHub Actions
+├── 6-conftest.py            # Browser- und Kontext-Fixtures
+├── 7-pytest.ini             # Pytest-Konfiguration
+├── 8-requirements.txt       # Python-Abhängigkeiten
+└── 9-.github/workflows/     # CI/CD Workflows (GitHub Actions)
